@@ -1,0 +1,20 @@
+/* Activity page layout styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.content {
+  font-size: 16px;
+  color: #666666;
+}

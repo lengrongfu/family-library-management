@@ -1,0 +1,6 @@
+<view class="container">
+  <view class="title">Activity Page</view>
+  <view class="content">
+    <text>Welcome to the activity page!</text>
+  </view>
+</view>

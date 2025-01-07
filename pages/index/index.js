@@ -25,9 +25,9 @@ Page({
   },
 
   navigateToBookDetails: function (event) {
-    const bookId = event.currentTarget.dataset.bookId;
+    const bookIsbn = event.currentTarget.dataset.bookIsbn;
     wx.navigateTo({
-      url: `/pages/bookDetails/bookDetails?bookId=${bookId}`
+      url: `/pages/bookDetails/bookDetails?bookId=${bookIsbn}`
     });
   }
 });

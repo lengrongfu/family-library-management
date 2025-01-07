@@ -19,27 +19,19 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "images/home.png",
-        "selectedIconPath": "images/home_selected.png"
+        "text": "首页"
       },
       {
         "pagePath": "pages/bookFriends/bookFriends",
-        "text": "书友",
-        "iconPath": "images/friends.png",
-        "selectedIconPath": "images/friends_selected.png"
+        "text": "书友"
       },
       {
         "pagePath": "pages/activity/activity",
-        "text": "动态",
-        "iconPath": "images/activity.png",
-        "selectedIconPath": "images/activity_selected.png"
+        "text": "动态"
       },
       {
         "pagePath": "pages/my/my",
-        "text": "我的",
-        "iconPath": "images/my.png",
-        "selectedIconPath": "images/my_selected.png"
+        "text": "我的"
       }
     ]
   }

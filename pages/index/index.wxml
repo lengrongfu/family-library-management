@@ -4,9 +4,11 @@
   </view>
   <view class="book-list">
     <block wx:for="{{books}}" wx:key="id">
-      <view class="book-item" data-book-id="{{item.id}}" bindtap="navigateToBookDetails">
-        <text class="book-title">{{item.title}}</text>
-        <text class="book-author">{{item.author}}</text>
+      <view class="book-item" data-book-isbn="{{item.isbn}}" bindtap="navigateToBookDetails">
+        <text class="book-title">{{item.bookInfo.title}}</text>
+        <text class="book-author">{{item.bookInfo.author}}</text>
+        <text class="book-publisher">{{item.bookInfo.publisher}}</text>
+        <text class="book-price">{{item.price}}</text>
       </view>
     </block>
   </view>

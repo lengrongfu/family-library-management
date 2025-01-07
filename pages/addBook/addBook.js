@@ -38,8 +38,13 @@ Page({
       url: `https://api.douban.com/v2/book/isbn/${isbn}?apiKey=${apiKey}`,
       method: 'GET',
       success: (res) => {
+        const { title, author, publisher } = res.data;
         this.setData({
-          bookInfo: res.data
+          bookInfo: {
+            title,
+            author: author[0],
+            publisher
+          }
         });
       },
       fail: (err) => {

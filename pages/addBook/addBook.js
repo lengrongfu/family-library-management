@@ -33,22 +33,19 @@ Page({
 
   // Function to fetch book info from Douban API
   fetchBookInfo(isbn) {
-    const apiKey = '0ac44ae016490db2204ce0a042db2916';
-    wx.request({
-      url: `https://api.douban.com/v2/book/isbn/${isbn}?apiKey=${apiKey}`,
-      method: 'GET',
-      success: (res) => {
+    const { fetchBookDetails } = require('../../utils/doubanAPI');
+    fetchBookDetails(isbn)
+      .then((bookInfo) => {
         this.setData({
-          bookInfo: res.data
+          bookInfo
         });
-      },
-      fail: (err) => {
+      })
+      .catch((err) => {
         wx.showToast({
           title: 'Failed to fetch book info',
           icon: 'none'
         });
-      }
-    });
+      });
   },
 
   // Function to add book to the library

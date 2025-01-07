@@ -51,6 +51,10 @@ This WeChat applet is designed to help families manage their paper book collecti
 
 5. **Submit for Review**: After uploading, log in to the WeChat Mini Program admin console and submit the applet for review. Once approved, the applet will be available to users.
 
+### Using Local Storage
+
+The Family Library Management System WeChat Applet now uses local storage to save and retrieve book data. This change eliminates the need for a cloud database, making the applet more efficient and easier to use.
+
 ## Additional Information
 
 For more details on developing WeChat applets, refer to the [official documentation](https://developers.weixin.qq.com/miniprogram/en/dev/).

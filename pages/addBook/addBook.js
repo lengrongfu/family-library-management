@@ -28,35 +28,27 @@ Page({
       return;
     }
 
-    // Save book info to local database
-    const db = wx.cloud.database();
-    db.collection('books').add({
-      data: {
-        isbn,
-        bookInfo,
-        price
+    // Save book info to local storage
+    let books = wx.getStorageSync('books') || [];
+    books.push({
+      isbn,
+      bookInfo,
+      price
+    });
+    wx.setStorageSync('books', books);
+
+    wx.showToast({
+      title: 'Book added successfully',
+      icon: 'success'
+    });
+    this.setData({
+      isbn: '',
+      bookInfo: {
+        title: '',
+        author: '',
+        publisher: ''
       },
-      success: (res) => {
-        wx.showToast({
-          title: 'Book added successfully',
-          icon: 'success'
-        });
-        this.setData({
-          isbn: '',
-          bookInfo: {
-            title: '',
-            author: '',
-            publisher: ''
-          },
-          price: ''
-        });
-      },
-      fail: (err) => {
-        wx.showToast({
-          title: 'Failed to add book',
-          icon: 'none'
-        });
-      }
+      price: ''
     });
   }
 });

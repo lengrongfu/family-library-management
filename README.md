@@ -18,7 +18,7 @@ This WeChat applet is designed to help families manage their paper book collecti
 - User-friendly interface with intuitive navigation
 - Categorization of books by genre, author, or other criteria
 - Search functionality with filters and sorting options
-- Cloud database for synchronization across devices
+- Local storage for book data
 - Reading progress tracking and reading goals
 
 ## Social and Sharing Features
@@ -50,6 +50,10 @@ This WeChat applet is designed to help families manage their paper book collecti
 4. **Upload the Project**: Click the "Upload" button to upload the project to the WeChat platform. You will need to provide a version number and a description of the changes.
 
 5. **Submit for Review**: After uploading, log in to the WeChat Mini Program admin console and submit the applet for review. Once approved, the applet will be available to users.
+
+### Using Local Storage
+
+The Family Library Management System WeChat Applet now uses local storage to save and retrieve book data. This change eliminates the need for a cloud database, making the applet more efficient and easier to use.
 
 ## Additional Information
 

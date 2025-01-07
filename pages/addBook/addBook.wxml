@@ -2,19 +2,18 @@
   <view class="input-group">
     <label>ISBN:</label>
     <input type="text" value="{{isbn}}" data-field="isbn" bindinput="handleInputChange" />
-    <button bindtap="scanISBN">Scan ISBN</button>
   </view>
   <view class="input-group">
     <label>Title:</label>
-    <input type="text" value="{{bookInfo.title}}" disabled />
+    <input type="text" value="{{bookInfo.title}}" data-field="bookInfo.title" bindinput="handleInputChange" />
   </view>
   <view class="input-group">
     <label>Author:</label>
-    <input type="text" value="{{bookInfo.author}}" disabled />
+    <input type="text" value="{{bookInfo.author}}" data-field="bookInfo.author" bindinput="handleInputChange" />
   </view>
   <view class="input-group">
     <label>Publisher:</label>
-    <input type="text" value="{{bookInfo.publisher}}" disabled />
+    <input type="text" value="{{bookInfo.publisher}}" data-field="bookInfo.publisher" bindinput="handleInputChange" />
   </view>
   <view class="input-group">
     <label>Price:</label>

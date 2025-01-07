@@ -2,14 +2,13 @@
 
 ## Overview
 
-This WeChat applet is designed to help families manage their paper book collections. Users can manually enter book details, search for books, and remove books from the library. Each book can be scanned using its ISBN, and the applet will fetch detailed information about the book from the Douban service API. Users can also enter the price of the book.
+This WeChat applet is designed to help families manage their paper book collections. Users can manually enter book details, search for books, and remove books from the library. Users can also enter the price of the book.
 
 ## Core Features
 
 - User authentication and registration
 - Manual entry of book details
 - Search functionality to find books in the library
-- ISBN scanning to fetch book details from Douban API
 - Storage of book details, including user-entered price, in a local database
 - Removal of books from the library
 

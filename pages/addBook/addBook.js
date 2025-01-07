@@ -1,7 +1,11 @@
 Page({
   data: {
     isbn: '',
-    bookInfo: null,
+    bookInfo: {
+      title: '',
+      author: '',
+      publisher: ''
+    },
     price: ''
   },
 
@@ -13,45 +17,10 @@ Page({
     });
   },
 
-  // Function to scan ISBN
-  scanISBN() {
-    wx.scanCode({
-      success: (res) => {
-        this.setData({
-          isbn: res.result
-        });
-        this.fetchBookInfo(res.result);
-      },
-      fail: (err) => {
-        wx.showToast({
-          title: 'Failed to scan ISBN',
-          icon: 'none'
-        });
-      }
-    });
-  },
-
-  // Function to fetch book info from Douban API
-  fetchBookInfo(isbn) {
-    const { fetchBookDetails } = require('../../utils/doubanAPI');
-    fetchBookDetails(isbn)
-      .then((bookInfo) => {
-        this.setData({
-          bookInfo
-        });
-      })
-      .catch((err) => {
-        wx.showToast({
-          title: 'Failed to fetch book info',
-          icon: 'none'
-        });
-      });
-  },
-
   // Function to add book to the library
   addBook() {
     const { isbn, bookInfo, price } = this.data;
-    if (!isbn || !bookInfo || !price) {
+    if (!isbn || !bookInfo.title || !bookInfo.author || !bookInfo.publisher || !price) {
       wx.showToast({
         title: 'Please complete all fields',
         icon: 'none'
@@ -74,7 +43,11 @@ Page({
         });
         this.setData({
           isbn: '',
-          bookInfo: null,
+          bookInfo: {
+            title: '',
+            author: '',
+            publisher: ''
+          },
           price: ''
         });
       },

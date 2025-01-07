@@ -1,0 +1,13 @@
+/* My Page layout styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.text {
+  font-size: 18px;
+  color: #333333;
+}

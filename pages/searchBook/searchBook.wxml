@@ -1,8 +1,15 @@
 <view class="container">
-  <view class="search-group">
-    <label>Search:</label>
-    <input type="text" value="{{searchQuery}}" bindinput="handleInputChange" />
-    <button bindtap="searchBooks">Search</button>
+  <view class="top-bar">
+    <view class="time">17:48</view>
+    <view class="title">搜索书籍</view>
+    <view class="icons">
+      <image src="/images/options.png" class="icon"></image>
+      <image src="/images/scanner.png" class="icon"></image>
+    </view>
+  </view>
+  <view class="search-bar">
+    <input type="text" placeholder="搜索" value="{{searchQuery}}" bindinput="handleInputChange" class="search-input"></input>
+    <image src="/images/scanner.png" class="search-icon"></image>
   </view>
   <view class="filter-group">
     <label>Filter:</label>

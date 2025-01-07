@@ -8,7 +8,39 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTitleText": "Family Library",
+    "navigationBarTitleText": "首页",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#007aff",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_selected.png"
+      },
+      {
+        "pagePath": "pages/bookFriends/bookFriends",
+        "text": "书友",
+        "iconPath": "images/friends.png",
+        "selectedIconPath": "images/friends_selected.png"
+      },
+      {
+        "pagePath": "pages/activity/activity",
+        "text": "动态",
+        "iconPath": "images/activity.png",
+        "selectedIconPath": "images/activity_selected.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my_selected.png"
+      }
+    ]
   }
 }

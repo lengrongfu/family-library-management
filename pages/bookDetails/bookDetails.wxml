@@ -1,4 +1,12 @@
 <view class="container">
+  <view class="top-bar">
+    <view class="time">17:48</view>
+    <view class="title">书籍详情</view>
+    <view class="icons">
+      <image src="/images/options.png" class="icon"></image>
+      <image src="/images/scanner.png" class="icon"></image>
+    </view>
+  </view>
   <view class="book-details">
     <view class="detail-group">
       <label>Title:</label>

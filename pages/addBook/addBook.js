@@ -33,8 +33,9 @@ Page({
 
   // Function to fetch book info from Douban API
   fetchBookInfo(isbn) {
+    const apiKey = '0ac44ae016490db2204ce0a042db2916';
     wx.request({
-      url: `https://api.douban.com/v2/book/isbn/${isbn}`,
+      url: `https://api.douban.com/v2/book/isbn/${isbn}?apiKey=${apiKey}`,
       method: 'GET',
       success: (res) => {
         this.setData({

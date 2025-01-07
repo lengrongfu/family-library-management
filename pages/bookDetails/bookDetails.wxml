@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="book-details">
+    <view class="detail-group">
+      <label>Title:</label>
+      <text>{{bookInfo.title}}</text>
+    </view>
+    <view class="detail-group">
+      <label>Author:</label>
+      <text>{{bookInfo.author}}</text>
+    </view>
+    <view class="detail-group">
+      <label>Publisher:</label>
+      <text>{{bookInfo.publisher}}</text>
+    </view>
+    <view class="detail-group">
+      <label>Price:</label>
+      <text>{{price}}</text>
+    </view>
+  </view>
+  <button bindtap="updateBook">Update Book</button>
+  <button bindtap="deleteBook">Delete Book</button>
+</view>

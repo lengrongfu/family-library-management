@@ -1,0 +1,28 @@
+<view class="container">
+  <view class="search-group">
+    <label>Search:</label>
+    <input type="text" value="{{searchQuery}}" bindinput="handleInputChange" />
+    <button bindtap="searchBooks">Search</button>
+  </view>
+  <view class="filter-group">
+    <label>Filter:</label>
+    <button data-filter="all" bindtap="filterResults">All</button>
+    <button data-filter="genre1" bindtap="filterResults">Genre 1</button>
+    <button data-filter="genre2" bindtap="filterResults">Genre 2</button>
+  </view>
+  <view class="sort-group">
+    <label>Sort by:</label>
+    <button data-sort="title" bindtap="sortResults">Title</button>
+    <button data-sort="author" bindtap="sortResults">Author</button>
+    <button data-sort="price" bindtap="sortResults">Price</button>
+  </view>
+  <view class="search-results">
+    <block wx:for="{{searchResults}}" wx:key="id">
+      <view class="result-item">
+        <text class="result-title">{{item.bookInfo.title}}</text>
+        <text class="result-author">{{item.bookInfo.author}}</text>
+        <text class="result-price">{{item.price}}</text>
+      </view>
+    </block>
+  </view>
+</view>

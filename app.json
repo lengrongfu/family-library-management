@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/addBook/addBook",
+    "pages/searchBook/searchBook",
+    "pages/bookDetails/bookDetails"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "Family Library",
+    "navigationBarTextStyle": "black"
+  }
+}

@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="header">
+    <text class="title">Family Library</text>
+  </view>
+  <view class="book-list">
+    <block wx:for="{{books}}" wx:key="id">
+      <view class="book-item" data-book-id="{{item.id}}" bindtap="navigateToBookDetails">
+        <text class="book-title">{{item.title}}</text>
+        <text class="book-author">{{item.author}}</text>
+      </view>
+    </block>
+  </view>
+  <view class="footer">
+    <button bindtap="navigateToAddBook">Add Book</button>
+    <button bindtap="navigateToSearchBook">Search Book</button>
+  </view>
+</view>

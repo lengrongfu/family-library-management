@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="top-bar">
+    <view class="time">17:48</view>
+    <view class="title">书友</view>
+    <view class="icons">
+      <image src="/images/options.png" class="icon"></image>
+      <image src="/images/scanner.png" class="icon"></image>
+    </view>
+  </view>
+  <view class="book-friends">
+    <block wx:for="{{bookFriends}}" wx:key="id">
+      <view class="friend-item">
+        <text class="friend-name">{{item.name}}</text>
+        <text class="friend-email">{{item.email}}</text>
+      </view>
+    </block>
+  </view>
+  <button class="add-button" bindtap="navigateToAddBookFriend">Add Book Friend</button>
+</view>

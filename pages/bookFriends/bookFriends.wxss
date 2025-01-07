@@ -1,0 +1,81 @@
+/* Styles for the container view */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+/* Styles for the top bar view */
+.top-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.time {
+  font-size: 16px;
+  color: #333333;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+}
+
+/* Styles for the book friends list */
+.book-friends {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 10px;
+}
+
+.friend-item {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+}
+
+.friend-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.friend-email {
+  font-size: 14px;
+  color: #666666;
+}
+
+/* Styles for the add button */
+.add-button {
+  flex: 0 0 auto;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #007aff;
+  border: none;
+  border-radius: 5px;
+}

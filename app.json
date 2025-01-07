@@ -3,7 +3,10 @@
     "pages/index/index",
     "pages/addBook/addBook",
     "pages/searchBook/searchBook",
-    "pages/bookDetails/bookDetails"
+    "pages/bookDetails/bookDetails",
+    "pages/bookFriends/bookFriends",
+    "pages/activity/activity",
+    "pages/my/my"
   ],
   "window": {
     "backgroundTextStyle": "light",

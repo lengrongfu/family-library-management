@@ -1,14 +1,42 @@
 <view class="container">
-  <view class="header">
-    <text class="title">Family Library</text>
+  <view class="top-bar">
+    <view class="time">17:48</view>
+    <view class="title">首页</view>
+    <view class="icons">
+      <image src="/images/options.png" class="icon"></image>
+      <image src="/images/scanner.png" class="icon"></image>
+    </view>
   </view>
-  <view class="book-list">
+  <view class="search-bar">
+    <input type="text" placeholder="搜索" class="search-input"></input>
+    <image src="/images/scanner.png" class="search-icon"></image>
+  </view>
+  <view class="section latest-shared">
+    <view class="section-title">Latest Shared</view>
+    <view class="book-item">
+      <image src="/images/kubernetes.jpg" class="book-cover"></image>
+      <view class="book-info">
+        <text class="book-title">Kubernetes实战</text>
+        <text class="book-author">(美)乔希·罗索</text>
+      </view>
+    </view>
+  </view>
+  <view class="section all-books">
+    <view class="section-title">All Books</view>
     <block wx:for="{{books}}" wx:key="id">
       <view class="book-item" data-book-isbn="{{item.isbn}}" bindtap="navigateToBookDetails">
-        <text class="book-title">{{item.bookInfo.title}}</text>
-        <text class="book-author">{{item.bookInfo.author}}</text>
-        <text class="book-publisher">{{item.bookInfo.publisher}}</text>
-        <text class="book-price">{{item.price}}</text>
+        <image src="/images/kubernetes.jpg" class="book-cover"></image>
+        <view class="book-info">
+          <text class="book-title">{{item.bookInfo.title}}</text>
+          <text class="book-author">{{item.bookInfo.author}}</text>
+          <view class="book-rating">
+            <image src="/images/star_empty.png" class="star"></image>
+            <image src="/images/star_empty.png" class="star"></image>
+            <image src="/images/star_empty.png" class="star"></image>
+            <image src="/images/star_empty.png" class="star"></image>
+            <image src="/images/star_empty.png" class="star"></image>
+          </view>
+        </view>
       </view>
     </block>
   </view>

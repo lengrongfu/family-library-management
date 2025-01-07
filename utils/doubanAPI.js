@@ -8,7 +8,8 @@ function fetchBookDetails(isbn) {
       method: 'GET',
       success: (res) => {
         if (res.statusCode === 200) {
-          resolve(res.data);
+          const { title, author, publisher } = res.data;
+          resolve({ title, author: author[0], publisher });
         } else {
           reject(new Error('Failed to fetch book details'));
         }

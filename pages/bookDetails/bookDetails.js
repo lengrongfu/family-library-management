@@ -15,21 +15,19 @@ Page({
 
   // Function to fetch book details from local database
   fetchBookDetails(bookId) {
-    const db = wx.cloud.database();
-    db.collection('books').doc(bookId).get({
-      success: (res) => {
-        this.setData({
-          bookInfo: res.data.bookInfo,
-          price: res.data.price
-        });
-      },
-      fail: (err) => {
-        wx.showToast({
-          title: 'Failed to fetch book details',
-          icon: 'none'
-        });
-      }
-    });
+    const books = wx.getStorageSync('books') || [];
+    const book = books.find(b => b.isbn === bookId);
+    if (book) {
+      this.setData({
+        bookInfo: book.bookInfo,
+        price: book.price
+      });
+    } else {
+      wx.showToast({
+        title: 'Failed to fetch book details',
+        icon: 'none'
+      });
+    }
   },
 
   // Function to handle input changes
@@ -51,45 +49,33 @@ Page({
       return;
     }
 
-    const db = wx.cloud.database();
-    db.collection('books').doc(bookId).update({
-      data: {
-        bookInfo,
-        price
-      },
-      success: (res) => {
-        wx.showToast({
-          title: 'Book updated successfully',
-          icon: 'success'
-        });
-      },
-      fail: (err) => {
-        wx.showToast({
-          title: 'Failed to update book',
-          icon: 'none'
-        });
-      }
-    });
+    let books = wx.getStorageSync('books') || [];
+    const bookIndex = books.findIndex(b => b.isbn === bookId);
+    if (bookIndex !== -1) {
+      books[bookIndex] = { isbn: bookId, bookInfo, price };
+      wx.setStorageSync('books', books);
+      wx.showToast({
+        title: 'Book updated successfully',
+        icon: 'success'
+      });
+    } else {
+      wx.showToast({
+        title: 'Failed to update book',
+        icon: 'none'
+      });
+    }
   },
 
   // Function to delete book
   deleteBook() {
     const { bookId } = this.data;
-    const db = wx.cloud.database();
-    db.collection('books').doc(bookId).remove({
-      success: (res) => {
-        wx.showToast({
-          title: 'Book deleted successfully',
-          icon: 'success'
-        });
-        wx.navigateBack();
-      },
-      fail: (err) => {
-        wx.showToast({
-          title: 'Failed to delete book',
-          icon: 'none'
-        });
-      }
+    let books = wx.getStorageSync('books') || [];
+    const newBooks = books.filter(b => b.isbn !== bookId);
+    wx.setStorageSync('books', newBooks);
+    wx.showToast({
+      title: 'Book deleted successfully',
+      icon: 'success'
     });
+    wx.navigateBack();
   }
 });

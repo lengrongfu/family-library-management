@@ -18,7 +18,7 @@ This WeChat applet is designed to help families manage their paper book collecti
 - User-friendly interface with intuitive navigation
 - Categorization of books by genre, author, or other criteria
 - Search functionality with filters and sorting options
-- Cloud database for synchronization across devices
+- Local storage for book data
 - Reading progress tracking and reading goals
 
 ## Social and Sharing Features

@@ -24,25 +24,11 @@ Page({
       return;
     }
 
-    // Fetch books from local database
-    const db = wx.cloud.database();
-    db.collection('books').where({
-      'bookInfo.title': db.RegExp({
-        regexp: searchQuery,
-        options: 'i'
-      })
-    }).get({
-      success: (res) => {
-        this.setData({
-          searchResults: res.data
-        });
-      },
-      fail: (err) => {
-        wx.showToast({
-          title: 'Failed to search books',
-          icon: 'none'
-        });
-      }
+    // Fetch books from local storage
+    const books = wx.getStorageSync('books') || [];
+    const searchResults = books.filter(book => book.bookInfo.title.toLowerCase().includes(searchQuery.toLowerCase()));
+    this.setData({
+      searchResults
     });
   },
 
